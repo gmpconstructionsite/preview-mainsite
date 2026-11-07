@@ -1,0 +1,467 @@
+{
+  "services": [
+    {
+      "id": "roofing",
+      "name": "Roofing & waterproofing",
+      "summary": "Roof installation, replacement and protection against water intrusion.",
+      "items": [
+        [
+          "Re-roofing and roof installation",
+          "Install a new roof or replace an existing one based on site conditions and the project scope."
+        ],
+        [
+          "Waterproofing",
+          "Protect roof decks and other areas exposed to water with a waterproofing system suited to the site."
+        ]
+      ],
+      "gallery": [
+        {
+          "file": "miriam-mmj-covered-court-01.webp",
+          "alt": "Covered court re-roofing at Miriam College"
+        },
+        {
+          "file": "miriam-esi-roof-deck-01.webp",
+          "alt": "Roof deck waterproofing at Miriam College"
+        }
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "Construction & site development",
+      "summary": "Site preparation, masonry and new house construction.",
+      "items": [
+        [
+          "House construction",
+          "Build a house from foundation through finishing, based on the agreed plans and scope."
+        ],
+        [
+          "Structural and masonry works",
+          "Carry out masonry and structural works according to the project requirements."
+        ],
+        [
+          "Land development",
+          "Prepare land for construction based on the site conditions and agreed scope."
+        ]
+      ],
+      "gallery": [
+        {
+          "file": "paranaque-house.webp",
+          "alt": "House construction in Parañaque"
+        },
+        {
+          "file": "masonry-work.webp",
+          "alt": "Masonry work shown in the GMP company profile"
+        }
+      ]
+    },
+    {
+      "id": "finishes",
+      "name": "Interiors & finishes",
+      "summary": "Surface finishes, ceiling systems, glass and custom carpentry.",
+      "items": [
+        [
+          "Repainting",
+          "Refresh interior and exterior surfaces with the preparation and coating specified for the job."
+        ],
+        [
+          "Tile installation",
+          "Install tiles for floors and walls as specified for the space."
+        ],
+        [
+          "Ceiling installation",
+          "Install ceilings suited to the layout and finish requirements."
+        ],
+        [
+          "Glass and mirrors",
+          "Install glass and mirrors for residential, commercial or institutional spaces."
+        ],
+        [
+          "Wood veneer installation",
+          "Apply wood veneers to specified interior surfaces and finishes."
+        ],
+        [
+          "Carpentry and cabinetry",
+          "Build or install doors, cabinets and modular cabinets to suit the project."
+        ]
+      ],
+      "gallery": [
+        {
+          "file": "condo-renovation-ortigas-01.webp",
+          "alt": "Condominium interior renovation in Ortigas"
+        },
+        {
+          "file": "carpentry-work.webp",
+          "alt": "Cabinetry shown in the GMP company profile"
+        }
+      ]
+    },
+    {
+      "id": "utilities",
+      "name": "Electrical & plumbing",
+      "summary": "Lighting, outlets and plumbing installations.",
+      "items": [
+        [
+          "Electrical works",
+          "Install lighting and electrical devices such as outlets based on the agreed scope."
+        ],
+        [
+          "Plumbing works",
+          "Install or improve plumbing lines and fixtures as required by the project."
+        ]
+      ],
+      "gallery": [
+        {
+          "file": "electrical-work.webp",
+          "alt": "Electrical work shown in the GMP company profile"
+        },
+        {
+          "file": "plumbing-work.webp",
+          "alt": "Sink and plumbing installation shown in the GMP company profile"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "paranaque-house",
+      "title": "Parañaque House Construction",
+      "location": "Parañaque City",
+      "date": "2025-05-30",
+      "category": "residential",
+      "description": "House construction project documented in the GMP company profile.",
+      "page": 6,
+      "images": [
+        {
+          "file": "paranaque-house.webp",
+          "alt": "Street-facing exterior of the two-storey Parañaque house"
+        }
+      ],
+      "quote_service": "House construction"
+    },
+    {
+      "slug": "miriam-klauss-hoffarth",
+      "title": "Miriam College Klauss Hoffarth Center",
+      "location": "Quezon City",
+      "date": "2025-09-10",
+      "category": "institutional",
+      "description": "The profile documents work at the Klauss Hoffarth Center and shows two views of the interior.",
+      "page": 6,
+      "images": [
+        {
+          "file": "miriam-klauss-hoffarth.webp",
+          "alt": "Interior views of the Klauss Hoffarth Center"
+        },
+        {
+          "file": "miriam-klauss-hoffarth-view-1.webp",
+          "alt": "Interior with ceiling and lighting finishes"
+        },
+        {
+          "file": "miriam-klauss-hoffarth-view-2.webp",
+          "alt": "Interior showing work in progress"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "ust-ipea-ethics-office",
+      "title": "UST IPEA Ethics Committee Office",
+      "location": "España, Manila",
+      "date": "2025-06-13",
+      "category": "institutional",
+      "description": "GMP’s profile shows the Ethics Committee office at the University of Santo Tomas, including its work area and built-in finishes.",
+      "page": 6,
+      "images": [
+        {
+          "file": "ust-ipea-ethics-office.webp",
+          "alt": "Two interior views of the UST IPEA Ethics Committee office"
+        },
+        {
+          "file": "ust-ipea-ethics-office-view-1.webp",
+          "alt": "Office interior with a work table"
+        },
+        {
+          "file": "ust-ipea-ethics-office-view-2.webp",
+          "alt": "Office interior and tiled floor"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "miriam-fatima-room",
+      "title": "Miriam College Fatima Room",
+      "location": "Quezon City",
+      "date": "2025-04-22",
+      "category": "interiors",
+      "description": "Mirror and partition wall works for the Fatima Room at Miriam College.",
+      "page": 6,
+      "images": [
+        {
+          "file": "miriam-fatima-room.webp",
+          "alt": "Mirror wall and partition installation at the Fatima Room"
+        },
+        {
+          "file": "miriam-fatima-room-view-1.webp",
+          "alt": "Installed mirror wall at the Fatima Room"
+        },
+        {
+          "file": "miriam-fatima-room-view-2.webp",
+          "alt": "Partition wall work at the Fatima Room"
+        }
+      ],
+      "quote_service": "Glass and mirrors"
+    },
+    {
+      "slug": "miriam-esi-roof-deck",
+      "title": "Miriam College ESI Building Roof Deck Waterproofing",
+      "location": "Quezon City",
+      "date": "2024-08-30",
+      "category": "roofing",
+      "description": "GMP carried out roof deck waterproofing at Miriam College’s ESI Building.",
+      "page": 8,
+      "images": [
+        {
+          "file": "miriam-esi-roof-deck-01.webp",
+          "alt": "Roof deck and waterproofing work at Miriam College’s ESI Building"
+        },
+        {
+          "file": "miriam-esi-roof-deck-view-1.webp",
+          "alt": "Worker on the ESI roof deck"
+        },
+        {
+          "file": "miriam-esi-roof-deck-view-2.webp",
+          "alt": "Roof deck beside the building roof"
+        }
+      ],
+      "quote_service": "Waterproofing"
+    },
+    {
+      "slug": "miriam-mmj-covered-court",
+      "title": "Miriam College MMJ Covered Court Re-roofing",
+      "location": "Quezon City",
+      "date": "2024-08-21",
+      "category": "roofing",
+      "description": "GMP carried out re-roofing works for the MMJ Covered Court at Miriam College.",
+      "page": 7,
+      "images": [
+        {
+          "file": "miriam-mmj-covered-court-01.webp",
+          "alt": "Workers and green metal roofing at the Miriam College covered court"
+        },
+        {
+          "file": "miriam-mmj-covered-court-view-1.webp",
+          "alt": "Workers on the covered court roof"
+        },
+        {
+          "file": "miriam-mmj-covered-court-view-2.webp",
+          "alt": "Covered court roof panels"
+        }
+      ],
+      "quote_service": "Re-roofing and roof installation"
+    },
+    {
+      "slug": "miriam-st-joseph-building",
+      "title": "Miriam College St. Joseph Building",
+      "location": "Quezon City",
+      "date": "2024-03-01",
+      "category": "institutional",
+      "description": "GMP’s portfolio includes work at the St. Joseph Building of Miriam College. The profile does not specify the exact scope.",
+      "page": 7,
+      "images": [
+        {
+          "file": "miriam-st-joseph-building-01.webp",
+          "alt": "Workers on the roof and exterior of Miriam College’s St. Joseph Building"
+        },
+        {
+          "file": "miriam-st-joseph-building-view-1.webp",
+          "alt": "Worker on the St. Joseph Building roof"
+        },
+        {
+          "file": "miriam-st-joseph-building-view-2.webp",
+          "alt": "Work at the exterior roof edge"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "st-lukes-medical-center",
+      "title": "St. Luke’s Medical Center",
+      "location": "Quezon City",
+      "date": "2022-07-25",
+      "category": "institutional",
+      "description": "GMP’s portfolio includes a project at St. Luke’s Medical Center. The profile shows interior photos without specifying the exact scope.",
+      "page": 7,
+      "images": [
+        {
+          "file": "st-lukes-medical-center-01.webp",
+          "alt": "Two interior views from the St. Luke’s Medical Center project"
+        },
+        {
+          "file": "st-lukes-medical-center-view-1.webp",
+          "alt": "First interior view at St. Luke’s Medical Center"
+        },
+        {
+          "file": "st-lukes-medical-center-view-2.webp",
+          "alt": "Second interior view at St. Luke’s Medical Center"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "condo-renovation-ortigas",
+      "title": "Ortigas Condominium Interior Renovation",
+      "location": "Ortigas, Pasig City",
+      "date": "2021-12-20",
+      "category": "interiors",
+      "description": "GMP renovated the interior of a condominium unit in Ortigas.",
+      "page": 7,
+      "images": [
+        {
+          "file": "condo-renovation-ortigas-01.webp",
+          "alt": "Two views of the renovated condominium interior in Ortigas"
+        },
+        {
+          "file": "condo-renovation-ortigas-view-1.webp",
+          "alt": "Dining area of the condominium"
+        },
+        {
+          "file": "condo-renovation-ortigas-view-2.webp",
+          "alt": "Living and work area of the condominium"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "interior-fit-out-dasmarinas",
+      "title": "Dasmariñas Interior Design and Fit-Out",
+      "location": "Dasmariñas, Cavite",
+      "date": "2021-08-15",
+      "category": "interiors",
+      "description": "GMP completed interior design and fit-out work in Dasmariñas, Cavite. The profile shows kitchen, bathroom, living and sleeping areas.",
+      "page": 9,
+      "images": [
+        {
+          "file": "interior-fit-out-dasmarinas-01.webp",
+          "alt": "Kitchen and bathroom from the Dasmariñas fit-out"
+        },
+        {
+          "file": "interior-fit-out-dasmarinas-02.webp",
+          "alt": "Living and sleeping areas from the Dasmariñas fit-out"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "ust-frassati-auditorium",
+      "title": "UST Frassati Stage Auditorium",
+      "location": "España, Manila",
+      "date": "2021-08-10",
+      "category": "institutional",
+      "description": "GMP carried out welding works for the University of Santo Tomas Frassati stage auditorium.",
+      "page": 5,
+      "images": [
+        {
+          "file": "ust-frassati-auditorium-01.webp",
+          "alt": "Stage and seating-side view inside the UST Frassati auditorium"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "idesia-talia-homes",
+      "title": "Idesia Talia Residential Construction",
+      "location": "Dasmariñas, Cavite",
+      "date": "2021-06-30",
+      "category": "residential",
+      "description": "GMP built six two-storey, single-attached Talia homes at Idesia.",
+      "page": 5,
+      "images": [
+        {
+          "file": "idesia-talia-homes-01.webp",
+          "alt": "Exterior of a two-storey Talia home at Idesia"
+        }
+      ],
+      "quote_service": "House construction"
+    },
+    {
+      "slug": "house-renovation-quezon-city",
+      "title": "House Renovation",
+      "location": "Quezon City",
+      "date": "2021-02-07",
+      "category": "residential",
+      "description": "GMP carried out a house renovation in Quezon City.",
+      "page": 5,
+      "images": [
+        {
+          "file": "house-renovation-quezon-city-01.webp",
+          "alt": "Street-facing exterior of a renovated Quezon City home"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "condo-renovation-greenhills",
+      "title": "Greenhills Condominium Interior Renovation",
+      "location": "Greenhills, San Juan",
+      "date": "2019-11-21",
+      "category": "interiors",
+      "description": "GMP renovated a condominium interior in Greenhills, San Juan.",
+      "page": 8,
+      "images": [
+        {
+          "file": "condo-renovation-greenhills-01.webp",
+          "alt": "Built-in cabinetry and illuminated display shelves in the Greenhills condominium"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "ust-hospital-exhaust-ducting",
+      "title": "UST Hospital Exhaust Ducting Painting",
+      "location": "España, Manila",
+      "date": "2019-10-03",
+      "category": "specialty",
+      "description": "GMP carried out painting works for exhaust ducting at UST Hospital.",
+      "page": 8,
+      "images": [
+        {
+          "file": "ust-hospital-exhaust-ducting-01.webp",
+          "alt": "Exterior exhaust ducting running up a wall at UST Hospital"
+        }
+      ],
+      "quote_service": "Repainting"
+    },
+    {
+      "slug": "elevator-shaft-cainta",
+      "title": "Elevator Shaft",
+      "location": "Cainta, Rizal",
+      "date": "2019-07-30",
+      "category": "specialty",
+      "description": "GMP’s portfolio includes an elevator shaft project in Cainta, Rizal.",
+      "page": 8,
+      "images": [
+        {
+          "file": "elevator-shaft-cainta-01.webp",
+          "alt": "Exterior view of the elevator shaft in Cainta"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    },
+    {
+      "slug": "garage-landscaping-cainta",
+      "title": "Garage Landscaping",
+      "location": "Cainta, Rizal",
+      "date": "2019-06-02",
+      "category": "residential",
+      "description": "Garage landscaping work in Cainta, Rizal.",
+      "page": 5,
+      "images": [
+        {
+          "file": "garage-landscaping-cainta-01.webp",
+          "alt": "Street-facing gate and garage frontage in Cainta"
+        }
+      ],
+      "quote_service": "Other / multiple services"
+    }
+  ],
+  "portfolio_contract_value_php": "54922190.82"
+}

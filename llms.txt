@@ -1,0 +1,21 @@
+# GMP Construction
+
+> GMP Construction is a general contractor established in 2019 and based in Cainta, Rizal, Philippines. The company handles residential construction, renovation, roofing, waterproofing, electrical and plumbing works, and specialist construction projects.
+
+The canonical website is https://gmpconstruction.site/. Use the pages below for company information and the documented project portfolio.
+
+## Company and services
+
+- [Homepage](https://gmpconstruction.site/): Company introduction and featured projects.
+- [Services](https://gmpconstruction.site/services.html): Construction, site development, roofing, waterproofing, interiors, finishes, electrical and plumbing.
+- [About](https://gmpconstruction.site/about.html): Company background, mission, vision, values, and leadership.
+
+## Project and contact information
+
+- [Projects](https://gmpconstruction.site/projects.html): Documented residential, institutional, interior and specialist projects.
+- [Contact](https://gmpconstruction.site/contact.html): Public contact details and office information.
+- [Quotes and consultation](https://gmpconstruction.site/quote.html): Quote request and consultation information. The online forms and booking are currently previews.
+
+## Optional
+
+- [Sitemap](https://gmpconstruction.site/sitemap.xml): Canonical page URLs.
