@@ -1,4 +1,3 @@
-from decimal import Decimal
 """Rebuild the editable static pages with Python 3. No dependencies."""
 from pathlib import Path
 import json
@@ -15,7 +14,7 @@ nav = [('Home','index'),('Services','services'),('Projects','projects'),('About'
 domain = 'https://gmpconstruction.site'
 area = 'Cainta, Rizal, Pasig and Metro Manila'
 phone = '+63 935 393 8879'
-email = 'gmpconstructionph@gmail.com'
+email = 'contact@gmpconstruction.site'
 address = 'Lot 4 Blk 16 Talavera Street, Vista Verde Executive Village, Cainta, Rizal'
 facebook = 'https://www.facebook.com/gmpconstructionph'
 company_intro = '<p>GMP Construction is a general contractor established in 2019. The company has been able to provide quality service in all its projects through its team composed of experienced employees and workers with valuable knowledge and expertise in the construction industry.</p>\n<p>We provide end-to-end solutions from conceptual planning, designing, project implementation, and project management up to preventive maintenance service. With each project, we ensure efficient and quality service through excellence, integrity, reliability, resilience, and safety.</p>'
@@ -35,15 +34,6 @@ icon_paths = {
 
 def icon(name):
     return f'<span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{icon_paths[name]}</svg></span>'
-
-def stat_number(value, currency=False):
-    display = f'₱{value:,.2f}' if currency else f'{value:,}'
-    kind = 'currency' if currency else 'integer'
-    return f'<span class="stat-accessible">{display}</span><span aria-hidden="true" data-stat-count="{value}" data-stat-format="{kind}">{display}</span>'
-
-# Values from the 2025 company profile, pages 5–9, counted per distinct project.
-contract_total = Decimal(data['portfolio_contract_value_php'])
-service_count = sum(len(group['items']) for group in services)
 
 def image(name,alt,priority=False):
     return f'<img src="assets/images/{e(name)}" alt="{e(alt)}" {"fetchpriority=\"high\"" if priority else "loading=\"lazy\""} decoding="async">'
@@ -79,6 +69,7 @@ def page(slug,title,desc,body):
   <!-- ANALYTICS: Insert the approved GA4 or GTM head snippet here after launch approval. -->
   <script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script>
   <script src="assets/js/site.js" defer></script>
+  {'<script src="assets/js/inquiry.js" defer></script>' if slug == "quote" else ""}
 </head>
 <body>
   <!-- GTM: Insert the approved noscript fallback here if using GTM. -->
@@ -114,7 +105,10 @@ def page(slug,title,desc,body):
       <a class="button dialog-quote" href="quote.html#quote">I want to avail this service</a>
     </div>
   </dialog>
-  <!-- MESSENGER: Add the approved messaging widget or link here. The footer uses a direct Messenger link. -->
+  <!-- MESSENGER: Shared floating chat launcher. Update this URL if the page username changes. -->
+  <a class="messenger-float" href="https://m.me/gmpconstructionph" target="_blank" rel="noopener noreferrer" aria-label="Chat with GMP Construction on Messenger (opens a new tab)" title="Chat on Messenger">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-7.3 16.8V22l3.3-1.8c1.2.5 2.6.8 4 .8a9.5 9.5 0 1 0 0-19Zm-5 12.6 4.3-4.7 2.3 2.4 3.4-2.4-4.2 4.8-2.4-2.4Z"/></svg>
+  </a>
 </body>
 </html>
 '''
@@ -154,16 +148,6 @@ home=f'''<section class="hero" aria-label="Featured project slideshow">
   <h1>From foundation<br>to finishing.</h1><p>GMP Construction handles new builds, roof and waterproofing works, and the specialist trades that bring a space together.</p>
   <div class="actions">{button('Request a quote','quote.html#quote')}{button('Explore our projects','projects.html','ghost')}</div></div>
 </section>
-<section class="credibility" aria-label="GMP Construction in numbers">
-  <div class="shell">
-    <dl class="credibility-grid">
-      <div><dt>Portfolio contract value</dt><dd class="stat-contract">{stat_number(contract_total, currency=True)}</dd></div>
-      <div><dt>Services offered</dt><dd>{stat_number(service_count)}</dd></div>
-      <div><dt>Documented projects</dt><dd>{stat_number(len(projects))}</dd></div>
-      <div><dt>Areas served</dt><dd class="stat-area">Rizal &amp;<br>Metro Manila</dd></div>
-    </dl>
-  </div>
-</section>
 <section class="shell section about-layout home-intro" data-reveal>{image('team.webp','GMP crew working on a building exterior')}<div><p class="eyebrow">MEET GMP CONSTRUCTION</p><h2>A general contractor based in Cainta</h2>{company_intro}{button('About GMP','about.html','outline')}</div></section>
 <section class="section shell"><p class="eyebrow">WHAT WE DO</p><h2>Find the right service</h2><div class="group-grid row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4">{group_tiles}</div></section>
 <section class="section tinted"><div class="shell"><p class="eyebrow">PROJECT PORTFOLIO</p><div class="section-head"><h2>See the work for yourself</h2>{button('View all projects','projects.html','outline')}</div>
@@ -178,7 +162,7 @@ page('services','Construction Services in Rizal & Metro Manila | GMP Constructio
 
 filters=[('all','All projects'),('residential','Residential'),('institutional','Institutional'),('interiors','Interiors'),('roofing','Roofing & waterproofing'),('specialty','Specialty works')]
 filter_html=''.join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key=="all").lower()}">{e(label)}</button>' for key,label in filters)
-page('projects','Project Portfolio | GMP Construction','Browse GMP’s documented construction projects in Rizal, Pasig, Quezon City, Manila, Parañaque and nearby areas, with photos and source details.',intro('PROJECT PORTFOLIO','Documented work across the region','Explore residential builds, institutional projects, interior renovations and specialty works. Open a project to see its photos.')+f'<section class="shell section"><h2>Browse {len(projects)} projects</h2><div class="filters" aria-label="Filter projects" hidden>{filter_html}</div><p class="results" aria-live="polite">{len(projects)} projects</p><div class="project-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">{"".join(project_card(p) for p in projects)}</div></section>')
+page('projects','Project Portfolio | GMP Construction','Browse GMP’s documented construction projects in Rizal, Pasig, Quezon City, Manila, Parañaque and nearby areas, with photos and project details.',intro('PROJECT PORTFOLIO','Documented work across the region','Explore residential builds, institutional projects, interior renovations and specialty works. Open a project to see its photos.')+f'<section class="shell section"><h2>Browse {len(projects)} projects</h2><div class="filters" aria-label="Filter projects" hidden>{filter_html}</div><p class="results" aria-live="polite">{len(projects)} projects</p><div class="project-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">{"".join(project_card(p) for p in projects)}</div></section>')
 
 page('about','About GMP Construction | Cainta General Contractor','Meet GMP Construction, a general contractor established in 2019 and based in Cainta, Rizal, serving Pasig, Metro Manila and surrounding areas.',intro('ABOUT GMP','A general contractor based in Cainta','Established in 2019, GMP Construction works on residential, institutional and specialty projects across Rizal, Metro Manila and nearby areas.')+f'''
 <section class="shell section about-layout">{image('team.webp','GMP crew working on the exterior of a building')}
@@ -215,11 +199,16 @@ page('contact','Contact GMP Construction | Cainta, Rizal','Find GMP Construction
       </form>
 </div></section>''')
 page('quote','Request a Quote or Book a Consultation | GMP Construction','Request a quote or explore consultation booking with GMP Construction.',intro('QUOTES AND BOOKINGS','Tell us about your project','Share the location and scope so the GMP team can assess your requirements.')+f'''
-<section class="shell section contact-layout"><div><h2>Book a consultation</h2><p>Discuss your project scope, site conditions and next steps with the team.</p>
-<div class="booking"><p>Online booking is in preview. For now, call <a href="tel:+639353938879">{phone}</a> or email <a href="mailto:{email}">{email}</a> to arrange a consultation.</p><!-- CALENDLY: Insert approved booking embed here. --></div></div>
+<section class="shell section contact-layout quote-layout"><div><h2>Book a consultation</h2><p>Discuss your project scope, site conditions and next steps with the team.</p>
+<div class="booking">
+<!-- CALENDLY: Live inline booking. Change data-url to update the event. -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/gmpconstructionsite/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=991b1b" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<p class="booking-fallback">Prefer a separate window? <a href="https://calendly.com/gmpconstructionsite/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=991b1b" target="_blank" rel="noopener noreferrer">Open the booking calendar</a>.</p>
+</div></div>
 <div class="quote-panel" id="quote"><h2>Request a quote</h2><p>Fields marked * are required.</p>
-<!-- INQUIRY: Connect this form to the approved server endpoint. Save to Sheets before sending acknowledgment. -->
-<form method="post" data-preview-form>
+<!-- INQUIRY: Connected to the Cloudflare Worker; credentials stay server-side. -->
+<form method="post" data-inquiry-form>
 <p class="project-context" hidden></p><div class="fields">
 <label>Full name *<input name="name" autocomplete="name" required maxlength="100"></label>
 <label>Company <span>(optional)</span><input name="company" autocomplete="organization" maxlength="120"></label>
@@ -229,7 +218,11 @@ page('quote','Request a Quote or Book a Consultation | GMP Construction','Reques
 <label>Project location *<input name="location" placeholder="City or municipality" required maxlength="160"></label>
 <label class="full">Project details *<textarea name="message" rows="5" maxlength="3000" required placeholder="Scope of work, site conditions or target schedule"></textarea></label>
 </div><label class="check"><input type="checkbox" name="contact_consent" required> I agree to be contacted about this inquiry.</label>
-<button class="button" type="submit" disabled>Preview inquiry</button><p class="form-note">Preview only. Entries stay on this page.</p><p class="status" role="status"></p>
+<div class="inquiry-verification" data-turnstile></div>
+<button class="button" type="submit" disabled>Send inquiry</button>
+<p class="form-note">Your details will be used to respond to this inquiry. Sending an inquiry does not subscribe you to marketing emails.</p>
+<noscript><p>Please enable JavaScript to send this form, or email <a href="mailto:contact@gmpconstruction.site">contact@gmpconstruction.site</a>.</p></noscript>
+<p class="status" role="status" aria-live="polite"></p>
 </form></div></section>''')
 
 # Publish discovery files at the same root as index.html.

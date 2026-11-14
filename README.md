@@ -1,4 +1,4 @@
-# GMP Construction website showcase v1.6
+# GMP Construction website showcase v1.7
 
 Open `index.html` in a browser after extracting the ZIP. All six pages
 work locally. The extracted folder is the GitHub Pages publishing root.
@@ -15,8 +15,7 @@ Run `python3 build.py` using Python 3.12 or later after editing a template or th
 content file. The generated HTML can also be edited directly for a quick
 review, but those edits will be overwritten by the next build.
 
-The 17 projects are documented in the 2025 profile (PDF pages 5–9). The review
-copy shows only the aggregate portfolio contract value. Dates are the dates printed in the profile.
+The 17 projects are documented in the 2025 profile (PDF pages 5–9). Homepage statistics have been removed. Dates are the dates printed in the profile.
 Content and project claims must be verified and approved by GMP Construction.
 
 ## Integration handoff
@@ -31,8 +30,7 @@ demonstrates validation and feedback without retaining or transmitting entries.
    acknowledgment through the selected email service. Keep provider credentials
    outside the site files. Use a separate opt-in flow and unsubscribe handling
    for the newsletter.
-3. Connect and test Calendly, Google Calendar and Zoom. Add the approved
-   analytics and messaging snippets only after the relevant setup is ready.
+3. Calendly is embedded using the supplied 30-minute event. Verify availability and any calendar/Zoom connection in the Calendly account. The floating Messenger link is live on every page. Analytics remains pending.
 4. Test the forms and confirmation delivery before launch. Confirm the canonical URLs, sharing image and discovery files on the final domain.
 
 Example launch endpoint contract (illustrative, no live endpoint in this draft):
@@ -78,7 +76,7 @@ address and requires internet access. Confirm the map pin before launch.
 
 ## Version history
 
-- **v1.6 (2026-11-07):** Simplified the homepage statistics to an alternating red and white 2×2 grid, with a one-time count-up animation for the three numeric figures.
+- **v1.7 (2026-11-07):** Simplified the homepage statistics to an alternating red and white 2×2 grid, with a one-time count-up animation for the three numeric figures.
 
 - **v1.5 (2026-11-07):** Added portfolio statistics and an embedded office map. Simplified service cards and galleries, and added branded icons to GMP values.
 
@@ -92,3 +90,29 @@ address and requires internet access. Confirm the map pin before launch.
 - **v1.0 (2026-11-07):** Initial five-page showcase with 13 services and 17 projects.
 
 Use the version in the ZIP filename or browser console when giving feedback.
+
+## v1.7 changes
+
+- Imported 66 supplied photos across 11 existing projects; EXIF orientation corrected, HEIC converted, and WebP copies capped at 1920 pixels on the longest edge.
+- `photo-import-index.csv` maps every supplied original to its website copy. Earlier profile images remain at the end of each matching gallery.
+- Removed the homepage stats section and its counter animation.
+- Added the supplied Calendly inline embed, plus a direct booking fallback. Internet access is required for Calendly.
+- Added a #991b1b Messenger launcher on all six pages linking to m.me/gmpconstructionph.
+- Inquiry and newsletter forms remain demonstrations; they do not send submissions.
+
+## v1.8-step3 — inquiry integration test
+
+Deploy this ZIP's root contents to the existing GitHub Pages repository.
+Open https://gmpconstruction.site/quote.html and hard-refresh after publishing.
+The inquiry form sends real submissions to the configured Worker.
+It will NOT submit from file://, localhost, GitHub preview domains, or other origins.
+Turnstile uses the public Site Key and action `inquiry`; all secrets stay server-side.
+Test with your own contact email and prefix the message with TEST. One submission
+should create one Inquiries row and two Email Log rows, and send two emails.
+`Accepted` in Email Log means accepted by Brevo, not proof of inbox delivery.
+If a request times out, keep the page open and retry unchanged details; the same
+submission ID is reused. Reloading the page loses that ID. No PII is stored locally.
+The mailing-list form is still a demonstration and does not save subscribers.
+Retry handling for failed backend emails, newsletter confirmation/unsubscribe,
+and native Cloudflare rate limiting remain upcoming steps before full launch.
+The Worker currently has only a best-effort per-instance request throttle.
