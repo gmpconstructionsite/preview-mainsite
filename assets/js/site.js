@@ -1,6 +1,6 @@
 /* Progressive enhancement. All navigation and project descriptions work without JavaScript. */
 document.documentElement.classList.add('js');
-console.info('GMP Construction showcase v1.8-step3');
+console.info('GMP Construction showcase v1.8.2');
 
 const menu = document.querySelector('.menu-toggle');
 const drawer = document.querySelector('.mobile-drawer');
@@ -41,17 +41,6 @@ if (filters) {
     document.querySelector('.results').textContent = visibleCount + (visibleCount === 1 ? ' project' : ' projects');
   }));
 }
-
-/* PREVIEW ONLY. Wire the live handler to your server endpoint after launch approval.
-   Suggested contract: POST JSON to /api/inquiries or /api/newsletter.
-   Keep credentials server-side and show success only when the endpoint confirms acceptance. */
-document.querySelectorAll('[data-preview-form]').forEach(form => {
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    form.querySelector('[role="status"]').textContent = 'Preview complete. Your details were not sent or stored.';
-  });
-  form.querySelector('[type="submit"]').disabled = false;
-});
 
 /* The banner rotates on a five-second cadence when motion is allowed. */
 const motion = matchMedia('(prefers-reduced-motion: reduce)');

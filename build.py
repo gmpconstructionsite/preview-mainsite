@@ -60,8 +60,14 @@ def page(slug,title,desc,body):
   <meta property="og:title" content="{e(title)}">
   <meta property="og:description" content="{e(desc)}">
   <meta property="og:url" content="{canonical}">
-  <meta property="og:image" content="{domain}/assets/images/paranaque-house.webp">
-  <meta property="og:image:alt" content="Exterior of GMP Construction's Parañaque house project">
+  <meta property="og:image" content="{domain}/assets/images/gmp-social-card-v1.8.2.jpg">
+  <meta property="og:image:secure_url" content="{domain}/assets/images/gmp-social-card-v1.8.2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GMP Construction — General contracting in Rizal and Metro Manila, with a completed Parañaque house project">
+  <meta name="twitter:image" content="{domain}/assets/images/gmp-social-card-v1.8.2.jpg">
+  <meta name="twitter:image:alt" content="GMP Construction — General contracting in Rizal and Metro Manila">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/images/gmp-logo-color.png">
   <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
@@ -70,6 +76,7 @@ def page(slug,title,desc,body):
   <script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script>
   <script src="assets/js/site.js" defer></script>
   {'<script src="assets/js/inquiry.js" defer></script>' if slug == "quote" else ""}
+  {'<script src="assets/js/newsletter.js" defer></script>' if slug == "contact" else ""}
 </head>
 <body>
   <!-- GTM: Insert the approved noscript fallback here if using GTM. -->
@@ -89,7 +96,8 @@ def page(slug,title,desc,body):
     <div class="shell footer-grid">
       <div><a class="logo" href="index.html">{image('gmp-logo-white.png','GMP Construction home')}</a><p>Based in Cainta, GMP handles construction and specialist works across Rizal, Pasig, Metro Manila, and nearby communities.</p><div class="social-links">
       <a href="viber://chat?number=%2B639353938879" aria-label="Chat with GMP on Viber" title="Viber"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 11.5a8 8 0 0 1-8 8h-2l-4 2v-4.5a8 8 0 1 1 14-5.5Z"/><path d="M9 8c-1 0-2 1-1 3 1 2 3 4 5 4 1 0 2-1 2-2l-2-1-1 1c-1-.5-2-1.5-2-2.5l.8-1L10 8Z"/></svg></a>
-      <a href="https://m.me/gmpconstructionph" aria-label="Chat with GMP on Messenger" title="Messenger"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-7.3 16.8V22l3.3-1.8c1.2.5 2.6.8 4 .8a9.5 9.5 0 1 0 0-19Zm-5 12.6 4.3-4.7 2.3 2.4 3.4-2.4-4.2 4.8-2.4-2.4Z"/></svg></a></div></div>
+      <a href="https://m.me/gmpconstructionph" aria-label="Chat with GMP on Messenger" title="Messenger"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-7.3 16.8V22l3.3-1.8c1.2.5 2.6.8 4 .8a9.5 9.5 0 1 0 0-19Zm-5 12.6 4.3-4.7 2.3 2.4 3.4-2.4-4.2 4.8-2.4-2.4Z"/></svg></a>
+      <a href="https://wa.me/639353938879" target="_blank" rel="noopener noreferrer" aria-label="Chat with GMP on WhatsApp (opens a new tab)" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.5-4.8A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="m8 7 1.5-.2 1 2.6-1 1c.7 1.5 1.7 2.5 3.3 3.2l1-1 2.5 1.1-.2 1.5c-.1.8-1.2 1.4-2.2 1.2-3.6-.6-6.7-3.7-7.1-7.1C6.7 8.3 7.2 7.2 8 7Z"/></svg></a></div></div>
       <div><h2>Get in touch</h2><p><a href="tel:+639353938879">{phone}</a><br><a href="mailto:{email}">{email}</a></p></div>
     </div>
     <div class="shell footer-bottom"><span>© 2026 GMP Construction</span></div>
@@ -189,22 +197,27 @@ page('contact','Contact GMP Construction | Cainta, Rizal','Find GMP Construction
 <iframe class="contact-map" title="Google Maps showing the GMP Construction office address in Cainta" src="https://www.google.com/maps?q={quote(address + ', Philippines')}&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <p><a href="https://www.google.com/maps/search/?api=1&amp;query={quote(address)}">Get directions</a> · <a href="https://m.me/gmpconstructionph">Messenger</a></p>
 {button('Quotes and bookings','quote.html','outline')}</div>
-<div class="quote-panel">      <!-- NEWSLETTER: Demo only. Connect a separate opt-in endpoint after approval. -->
+<div class="quote-panel">      <!-- NEWSLETTER: Live double opt-in through Cloudflare and Brevo. -->
       <h2>Project updates</h2><p>Get occasional news and project updates from GMP.</p>
-      <form method="post" data-preview-form>
-        <label for="newsletter-name">Name <span>(optional)</span></label><input id="newsletter-name" name="name" autocomplete="name">
-        <label for="newsletter-email">Email address</label><input id="newsletter-email" name="email" type="email" autocomplete="email" required>
+      <p class="subscription-notice" data-subscription-notice hidden>Thank you for confirming your email. You can now close this page.</p>
+      <form method="post" data-newsletter-form>
+        <label for="newsletter-name">Name <span>(optional)</span></label><input id="newsletter-name" name="name" autocomplete="name" maxlength="100">
+        <label for="newsletter-email">Email address</label><input id="newsletter-email" name="email" type="email" autocomplete="email" maxlength="160" required>
         <label class="check"><input type="checkbox" name="marketing_opt_in" required> I agree to receive GMP project updates by email.</label>
-        <button class="button" type="submit" disabled>Join the mailing list</button><p class="form-note">Preview only. Entries stay on this page.</p><p class="status" role="status"></p>
+        <div class="inquiry-verification" data-turnstile></div>
+        <button class="button" type="submit" disabled>Join the mailing list</button>
+        <p class="form-note">We will email a confirmation link. Confirm to join; you can unsubscribe from any future newsletter.</p>
+        <noscript><p>Please enable JavaScript to subscribe, or email contact@gmpconstruction.site for assistance.</p></noscript>
+        <p class="status" role="status" aria-live="polite"></p>
       </form>
 </div></section>''')
 page('quote','Request a Quote or Book a Consultation | GMP Construction','Request a quote or explore consultation booking with GMP Construction.',intro('QUOTES AND BOOKINGS','Tell us about your project','Share the location and scope so the GMP team can assess your requirements.')+f'''
 <section class="shell section contact-layout quote-layout"><div><h2>Book a consultation</h2><p>Discuss your project scope, site conditions and next steps with the team.</p>
 <div class="booking">
-<!-- CALENDLY: Live inline booking. Change data-url to update the event. -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/gmpconstructionsite/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=991b1b" style="min-width:320px;height:700px;"></div>
+<!-- CALENDLY: Auto-resize adjusts each booking step; keep only one resizing embed on this page. -->
+<div class="calendly-inline-widget" data-resize="true" data-url="https://calendly.com/gmpconstructionsite/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=991b1b" style="min-width:320px;height:580px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<p class="booking-fallback">Prefer a separate window? <a href="https://calendly.com/gmpconstructionsite/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=991b1b" target="_blank" rel="noopener noreferrer">Open the booking calendar</a>.</p>
+<p class="booking-fallback"><a href="https://calendly.com/gmpconstructionsite/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=991b1b" target="_blank" rel="noopener noreferrer">Open calendar in a new tab <span aria-hidden="true">↗</span></a></p>
 </div></div>
 <div class="quote-panel" id="quote"><h2>Request a quote</h2><p>Fields marked * are required.</p>
 <!-- INQUIRY: Connected to the Cloudflare Worker; credentials stay server-side. -->
