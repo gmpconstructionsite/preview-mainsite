@@ -1,6 +1,6 @@
 /* Progressive enhancement. All navigation and project descriptions work without JavaScript. */
 document.documentElement.classList.add('js');
-console.info('GMP Construction showcase v1.6');
+console.info('GMP Construction showcase v1.8-step3');
 
 const menu = document.querySelector('.menu-toggle');
 const drawer = document.querySelector('.mobile-drawer');
@@ -85,38 +85,6 @@ if (!motion.matches && 'IntersectionObserver' in window) {
     });
   }, { threshold: .12 });
   document.querySelectorAll('[data-reveal]').forEach(section => observer.observe(section));
-}
-
-/* Start the counters once the stats enter view. The HTML contains the final values. */
-const stats = document.querySelector('.credibility-grid');
-if (stats && !motion.matches && 'IntersectionObserver' in window) {
-  const counts = [...stats.querySelectorAll('[data-stat-count]')].map(element => {
-    const currency = element.dataset.statFormat === 'currency';
-    return {
-      element,
-      target: Number(element.dataset.statCount),
-      finalText: element.textContent,
-      format: new Intl.NumberFormat('en-PH', currency ? {
-        style: 'currency', currency: 'PHP', minimumFractionDigits: 2, maximumFractionDigits: 2
-      } : { maximumFractionDigits: 0 })
-    };
-  });
-  const statsObserver = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) return;
-    statsObserver.disconnect();
-    if (motion.matches) return;
-    const start = performance.now();
-    function render(now) {
-      const progress = Math.min((now - start) / 1050, 1);
-      const eased = 1 - (1 - progress) ** 3;
-      counts.forEach(({element, target, finalText, format}) => {
-        element.textContent = progress === 1 || motion.matches ? finalText : format.format(target * eased);
-      });
-      if (progress < 1 && !motion.matches) requestAnimationFrame(render);
-    }
-    render(start);
-  }, { threshold: .2 });
-  statsObserver.observe(stats);
 }
 
 /* Project gallery. */
