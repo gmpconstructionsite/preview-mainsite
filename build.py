@@ -194,8 +194,8 @@ options=''.join(f'<optgroup label="{e(g["name"])}">'+''.join(f'<option>{e(name)}
 page('contact','Contact GMP Construction | Cainta, Rizal','Find GMP Construction contact details and service coverage in Rizal and Metro Manila.',intro('GET IN TOUCH','Contact GMP Construction','For project estimates or consultations, use our dedicated quote and booking page.')+f'''
 <section class="shell section contact-layout">
 <div><h2>Contact our team</h2><dl class="company-facts"><dt>Phone</dt><dd><a href="tel:+639353938879">{phone}</a></dd><dt>Email</dt><dd><a href="mailto:{email}">{email}</a></dd><dt>Office</dt><dd>{address}</dd></dl>
-<iframe class="contact-map" title="Google Maps showing the GMP Construction office address in Cainta" src="https://www.google.com/maps?q={quote(address + ', Philippines')}&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p><a href="https://www.google.com/maps/search/?api=1&amp;query={quote(address)}">Get directions</a> · <a href="https://m.me/gmpconstructionph">Messenger</a></p>
+<iframe class="contact-map" title="GMP Construction location on Google Maps" src="https://www.google.com/maps?cid=15400993554588596584&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://maps.app.goo.gl/dTXpAnzYsuog99WG9" target="_blank" rel="noopener noreferrer">Get directions</a> · <a href="https://m.me/gmpconstructionph">Messenger</a></p>
 {button('Quotes and bookings','quote.html','outline')}</div>
 <div class="quote-panel">      <!-- NEWSLETTER: Live double opt-in through Cloudflare and Brevo. -->
       <h2>Project updates</h2><p>Get occasional news and project updates from GMP.</p>

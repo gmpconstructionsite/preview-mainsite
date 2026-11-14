@@ -71,3 +71,7 @@ confirmation and unsubscribe tests must run on the deployed domain.
 - Inquiry and newsletter JavaScript are unchanged from v1.8.1.
 After deployment, verify the social image URL returns image/jpeg and use the
 Facebook Sharing Debugger to refresh cached previews for shared page URLs.
+
+## v1.8.3 map update
+Contact map now targets the GMP CONSTRUCTION listing identified by the provided Google Maps link (CID 15400993554588596584; location 14.6059183, 121.1174369). Directions opens the exact supplied short link.
+Only contact.html and build.py need to replace the corresponding files in the previous release; all inquiry, signup and design changes are retained.
