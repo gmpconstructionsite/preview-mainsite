@@ -75,3 +75,6 @@ Facebook Sharing Debugger to refresh cached previews for shared page URLs.
 ## v1.8.3 map update
 Contact map now targets the GMP CONSTRUCTION listing identified by the provided Google Maps link (CID 15400993554588596584; location 14.6059183, 121.1174369). Directions opens the exact supplied short link.
 Only contact.html and build.py need to replace the corresponding files in the previous release; all inquiry, signup and design changes are retained.
+
+## v1.8.4 analytics
+Added the supplied GTM-N28Z9VFP snippet once in the head of all six pages and the shared generator. Publish/configure the desired tags in Google Tag Manager; this code alone does not confirm Analytics events are being collected. No form fields are added to the data layer by this change.

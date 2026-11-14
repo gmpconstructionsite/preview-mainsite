@@ -41,6 +41,13 @@ def button(text,href,kind=''):
     return f'<a class="button {kind}" href="{href}">{text} <span class="button-arrow" aria-hidden="true"></span></a>'
 def links(active):
     return ''.join(f'<a href="{slug}.html"'+(' aria-current="page"' if slug==active else '')+f'>{title}</a>' for title,slug in nav)
+analytics = """<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N28Z9VFP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>"""
+
 def page(slug,title,desc,body):
     canonical = domain + ('/' if slug=='index' else f'/{slug}.html')
     schema={'@context':'https://schema.org','@type':'GeneralContractor','name':'GMP Construction','url':domain,'image':domain+'/assets/images/paranaque-house.webp','telephone':'+639353938879','email':email,'foundingDate':'2019','address':{'@type':'PostalAddress','streetAddress':'Lot 4 Blk 16 Talavera Street, Vista Verde Executive Village','addressLocality':'Cainta','addressRegion':'Rizal','addressCountry':'PH'},'areaServed':['Cainta','Rizal','Pasig','Metro Manila'],'sameAs':[facebook]}
@@ -49,6 +56,7 @@ def page(slug,title,desc,body):
 <html lang="en-PH">
 <head>
   <meta charset="utf-8">
+  {analytics}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
   <title>{e(title)}</title>
